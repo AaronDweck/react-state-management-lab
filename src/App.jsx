@@ -86,13 +86,13 @@ const App = () => {
       img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/e41f26.png',
     },
   ])
-  
+
   let totalStrength = team.reduce((accumulator, currentValue) => accumulator + currentValue.strength, 0) / team.length
   let totalAgility = team.reduce((accumulator, currentValue) => accumulator + currentValue.agility, 0) / team.length
 
   function handleAddFighter(fighter) {
     if (money < fighter.price) {
-      console.log("Not enough money")
+      window.alert('Not enough money')
     } else {
       setTeam([...team, fighter])
       setZombieFighters(zombieFighters.filter(zombieFighter => zombieFighter.id !== fighter.id))
