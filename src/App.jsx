@@ -86,16 +86,9 @@ const App = () => {
       img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/e41f26.png',
     },
   ])
-  let totalStrength = 0
-  let totalAgility = 0
-
-  // calculating total strength
-  team.forEach(fighter => totalStrength += fighter.strength)
-  totalStrength = totalStrength / team.length
-
-  // calculating total strength
-  team.forEach(fighter => totalAgility += fighter.agility)
-  totalAgility = totalAgility / team.length
+  
+  let totalStrength = team.reduce((accumulator, currentValue) => accumulator + currentValue.strength, 0) / team.length
+  let totalAgility = team.reduce((accumulator, currentValue) => accumulator + currentValue.agility, 0) / team.length
 
   function handleAddFighter(fighter) {
     if (money < fighter.price) {
