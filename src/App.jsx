@@ -87,8 +87,8 @@ const App = () => {
     },
   ])
 
-  let totalStrength = team.reduce((accumulator, currentValue) => accumulator + currentValue.strength, 0) / team.length
-  let totalAgility = team.reduce((accumulator, currentValue) => accumulator + currentValue.agility, 0) / team.length
+  let totalStrength = team.reduce((accumulator, currentValue) => accumulator + currentValue.strength, 0)
+  let totalAgility = team.reduce((accumulator, currentValue) => accumulator + currentValue.agility, 0)
 
   function handleAddFighter(fighter) {
     if (money < fighter.price) {
